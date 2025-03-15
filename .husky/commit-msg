@@ -8,4 +8,4 @@
 
 echo 'running commit-msg hook ...'
 echo ' - linting the commit message ...'
-pnpm exec commitlint --last --verbose
+pnpm exec commitlint --verbose --edit "$i"
