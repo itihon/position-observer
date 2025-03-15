@@ -1,0 +1,66 @@
+{
+  "name": "position-observer",
+  "version": "0.0.1",
+  "description": "Observes position change of an element within viewport as a result of resize, scroll, left or top coordinates change.",
+  "homepage": "https://itihon.github.io/position-observer/",
+  "keywords": [
+    "position",
+    "resize",
+    "intersection",
+    "observer",
+    "position-observer"
+  ],
+  "author": "Alexandr Kalabin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itihon/position-observer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itihon/position-observer/issues"
+  },
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "browser": "dist/esm/index.js",
+  "scripts": {
+    "commit": "cz",
+    "build:esm": "rollup lib/index.js --file dist/esm/index.js --format esm",
+    "prepare": "husky"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.js"
+    }
+  },
+  "packageManager": "pnpm@10.6.2",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/js": "^9.22.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "3.5.3",
+    "rollup": "^4.35.0",
+    "typescript-eslint": "^8.26.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "{lib,__tests__}/**/*.{js,mjs,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
