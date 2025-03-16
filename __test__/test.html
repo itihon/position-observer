@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>intersection observer</title>
+    <link rel="stylesheet" href="test.css">
+  </head>
+  <body>
+    <input type="text" name="intersectionRatio">
+    <input type="range" name="inputX" min="-400" max="400" class="range">
+    <input type="range" name="inputY" min="-400" max="400" class="range">
+    <div class="outer">
+      <div class="inner">
+        <form class="form" name="form">
+          <input class="input" type="text" name="input" id="">
+        </form>
+      </div>
+    </div>
+    
+    <div class="outer-observer"></div>
+
+    <div class="inner-observer"></div>
+
+
+    <script type="module" src="test.js"></script>
+  </body>
+</html>
