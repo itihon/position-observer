@@ -25,8 +25,6 @@ const { left: initX, top: initY } = innerObserverRect.getBoundingClientRect();
 const observer = PositionObserver((target, targetRect, isVisible) => {
   const { left, top, width, height } = targetRect;
 
-  console.log(isVisible)
-
   if (isVisible) {
     // innerObserverRect.style.left = `${left}px`;
     // innerObserverRect.style.top = `${top}px`;

@@ -103,7 +103,6 @@ body * {
 .outer-observer {
   outline: 1px solid red;
   background-color: red;
-  z-index: -1;
 }
 
 .inner-observer {
