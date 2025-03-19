@@ -3,8 +3,6 @@ import PositionObserver from "../lib/position-observer.js";
 const { input } = document.form;
 const [inputX, inputY] = document.querySelectorAll('.range');
 const innerObserverRect = document.querySelector('.inner-observer');
-const outerObserverRect = document.querySelector('.outer-observer');
-const intersectionRatio = document.querySelector('[name="intersectionRatio"]');
 
 function changePos(e) {
   const { target } = e;
