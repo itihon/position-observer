@@ -2,6 +2,8 @@
   box-sizing: border-box;
 /*   box-sizing: content-box; */
   opacity: .95;
+/*   padding: 0 !important;
+  margin: 0 !important; */
 }
 
 body {
@@ -94,20 +96,31 @@ body * {
 }
 
 .outer-observer,
-.inner-observer {
+.inner-observer,
+.captured-rect {
   resize: none;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .outer-observer {
   outline: 1px solid red;
-  background-color: red;
+  color: slategray;
+  background-color: rgba(255, 0, 0, .2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.captured-rect {
+  outline: 1px solid green;
+  background-color: rgba(0, 255, 0, .2);
 }
 
 .inner-observer {
   outline: 1px solid blue;
-  transform: translate(-100%, -100%);
 }
 
 .range {
