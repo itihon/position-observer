@@ -1,6 +1,5 @@
 import PositionObserver from "../dist/esm/index.js";
 // import { PositionObserver } from '../position-observer.js';
-import { makeCapturedRect } from "../lib/helpers.js";
 import { showCapturedArea, showObservingArea } from "./debug.js";
 
 const { input } = document.form;

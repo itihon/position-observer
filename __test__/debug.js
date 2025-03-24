@@ -1,11 +1,24 @@
   /* DEBUG */
-  export function showObservingArea(entry) {
-    const outerObserverRect = document.querySelector('.outer-observer');
+  export function showObservingArea(entry, pos) {
+    const outerObserverRect = document.createElement('div');
     const { left, top, width, height } = entry.rootBounds;
     const { scrollLeft, scrollTop } = document.documentElement;
+
+    
+
+    outerObserverRect.classList.add('outer-observer');
     outerObserverRect.style.transform = `translate(${left + scrollLeft}px, ${top + scrollTop}px)`;
     outerObserverRect.style.width = `${width}px`;
     outerObserverRect.style.height = `${height}px`;
+
+    if (window[pos]) {
+      console.log('removing', window[pos]);
+      window[pos].remove();
+    }
+
+    document.body.appendChild(outerObserverRect);
+    window[pos] = outerObserverRect;
+
     console.log(entry.rootBounds)
   }
   
