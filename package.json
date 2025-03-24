@@ -74,7 +74,6 @@
     ]
   },
   "dependencies": {
-    "@itihon/visibility-observer": "^1.0.0",
-    "request-animation-frame-loop": "^1.0.0"
+    "request-animation-frame-loop": "^1.0.1"
   }
 }

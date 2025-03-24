@@ -8,12 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@itihon/visibility-observer':
-        specifier: ^1.0.0
-        version: 1.0.0
       request-animation-frame-loop:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.8.0
@@ -359,9 +356,6 @@ packages:
   '@istanbuljs/schema@0.1.3':
     resolution: {integrity: sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==}
     engines: {node: '>=8'}
-
-  '@itihon/visibility-observer@1.0.0':
-    resolution: {integrity: sha512-ROicDesGjJBnr97+0lVF40M1TCjQFDuo53PsNeuineHZGp5r1iZOwxeJ8yTh9KfX7njAz0LXfCgsms6cT++K5A==}
 
   '@jest/console@29.7.0':
     resolution: {integrity: sha512-5Ni4CU7XHQi32IJ398EEP4RrB8eV09sXP2ROqD4bksHrnTree52PsxvX8tpL8LvTZ3pFzXyPbNQReSN41CAhOg==}
@@ -1948,8 +1942,8 @@ packages:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
 
-  request-animation-frame-loop@1.0.0:
-    resolution: {integrity: sha512-W4BdjSMEBkycCFMiG2uJQHPOM3vQnvbviiH8WAnD80frFNr63RkxgeAyhUQQsHHFsgY+SJzF3Qsg7UqWxs2Cow==}
+  request-animation-frame-loop@1.0.1:
+    resolution: {integrity: sha512-UldJV0WbLqyTlIVOnL0jqOWfVbjQPQf3h2J5hSkxmRuLmJvpn+vYqzwuyWaOT7hn/EtK1fDOCezpyqEYYASj9w==}
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -2653,8 +2647,6 @@ snapshots:
       resolve-from: 5.0.0
 
   '@istanbuljs/schema@0.1.3': {}
-
-  '@itihon/visibility-observer@1.0.0': {}
 
   '@jest/console@29.7.0':
     dependencies:
@@ -4509,7 +4501,7 @@ snapshots:
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
 
-  request-animation-frame-loop@1.0.0: {}
+  request-animation-frame-loop@1.0.1: {}
 
   require-directory@2.1.1: {}
 
