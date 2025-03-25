@@ -12,14 +12,11 @@
     outerObserverRect.style.height = `${height}px`;
 
     if (window[pos]) {
-      console.log('removing', window[pos]);
       window[pos].remove();
     }
 
     document.body.appendChild(outerObserverRect);
     window[pos] = outerObserverRect;
-
-    console.log(entry.rootBounds)
   }
   
   export function showCapturedArea(entry) {
