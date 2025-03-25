@@ -9,7 +9,7 @@ npm install @itihon/position-observer
 ### Usage
 
 ```js
-  import PositionObserver from 'position-observer';
+  import PositionObserver from '@itihon/position-observer';
 
   const ctx = {
     // a context to be passed in the callback
