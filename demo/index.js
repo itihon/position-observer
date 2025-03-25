@@ -1,0 +1,1 @@
+import PositionObserver from "../dist/esm/index.js";
