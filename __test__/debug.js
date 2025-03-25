@@ -4,7 +4,20 @@
     const { left, top, width, height } = entry.rootBounds;
     const { scrollLeft, scrollTop } = document.documentElement;
 
-    
+    // in observerCallback
+    // /* DEBUG */
+    // let pos;
+    // this.rootMargin.split(' ').forEach((value, idx) => {
+    //   if (value !== '0px' && idx === 0) pos = '$TOP';
+    //   if (value !== '0px' && idx === 1) pos = '$RIGHT';
+    //   if (value !== '0px' && idx === 2) pos = '$BOTTOM';
+    //   if (value !== '0px' && idx === 3) pos = '$LEFT';
+    // });
+
+    // const entry = entries[0];
+    // showObservingArea(entry, pos);
+    // console.log('observer callback', this);
+    // /* END OF DEBUG */
 
     outerObserverRect.classList.add('outer-observer');
     outerObserverRect.style.transform = `translate(${left + scrollLeft}px, ${top + scrollTop}px)`;
