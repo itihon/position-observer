@@ -3,7 +3,7 @@
 ### Installation
 
 ```sh
-npm install position-observer
+npm install @itihon/position-observer
 ```
 
 ### Usage
