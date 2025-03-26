@@ -1,30 +1,34 @@
-import PositionObserver from "../dist/esm/index.js";
+import './input-position-observer.js';
 
-const input = document.querySelector('.observed-element');
-const tooltip = document.querySelector('.tooltip');
-const { scrollBtn } = document.controls;
-const { height: tooltipHeight } = tooltip.getBoundingClientRect();
+const resizeBtn = document.querySelector('[name="resizeBtn"]');
+const container = resizeBtn.parentNode.firstElementChild;
+const { width, height } = container.getBoundingClientRect();
 
-const ctx = {
-  tooltip,
-  tooltipHeight
+container.scroll({ behavior: 'smooth', left: container.scrollWidth / 2 - width / 2, top: container.scrollHeight / 2 - height / 2});
+
+let containerRect;
+let event;
+
+function resizing(e) {
+  event = e;
+  requestAnimationFrame(resize);
 };
 
-const callback = (target, targetRect, ctx) => {
-  const { tooltip, tooltipHeight } = ctx;
-  const { style } = tooltip;
-  const { left, top } = targetRect;
+function resize() {
   const { scrollLeft, scrollTop } = document.documentElement;
+  containerRect = container.getBoundingClientRect(); 
 
-  style.transform = `translate(${left - 90 + scrollLeft}px, ${top - tooltipHeight + scrollTop}px)`;
-};
+  container.style.width = `${event.x - containerRect.left + 48 + scrollLeft}px`;
+  container.style.height = `${event.y - containerRect.top + 48 + scrollTop}px`;
+}
 
-const positionObserver = new PositionObserver(callback, ctx);
-
-positionObserver.observe(input);
-
-input.scrollIntoView({behavior: "smooth", block: 'center'});
-
-scrollBtn.addEventListener('click', () => {
-  input.scrollIntoView({behavior: "smooth", block: 'center'});
+resizeBtn.addEventListener('pointerdown', (e) => {
+  resizeBtn.onpointermove = resizing;
+  resizeBtn.setPointerCapture(e.pointerId);
 });
+
+resizeBtn.addEventListener('pointerup', (e) => {
+  resizeBtn.onpointermove = null;
+  resizeBtn.releasePointerCapture(e.pointerId);
+});
+
