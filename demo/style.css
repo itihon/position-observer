@@ -75,6 +75,7 @@ body {
 }
 
 .playground {
+  margin: 0 auto;
   width: fit-content;
   position: relative;
 }
@@ -82,7 +83,6 @@ body {
 .outer-container {
   position: relative;
 
-  margin: 0 auto;
   width: 80vw;
   height: 60vh;
 
