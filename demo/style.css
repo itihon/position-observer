@@ -115,7 +115,7 @@ body {
 }
 
 .observed-element {
-  margin: 150% 120% 160% 140%;
+  margin: 150%;
   height: 24px;
   width: 120px;
   outline: 1px solid #447ebb;
