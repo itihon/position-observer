@@ -21,18 +21,22 @@ function resizing(e) {
 
 function resize() {
   const { scrollLeft, scrollTop } = document.documentElement;
-  containerRect = container.getBoundingClientRect(); 
+  
+  resizeBtn.classList.remove('title-visible');
 
+  containerRect = container.getBoundingClientRect(); 
   container.style.width = `${event.x - containerRect.left + 48 + scrollLeft}px`;
   container.style.height = `${event.y - containerRect.top + 48 + scrollTop}px`;
 }
 
 resizeBtn.addEventListener('pointerdown', (e) => {
+  resizeBtn.classList.add('title-visible');
   resizeBtn.onpointermove = resizing;
   resizeBtn.setPointerCapture(e.pointerId);
 });
 
 resizeBtn.addEventListener('pointerup', (e) => {
+  resizeBtn.classList.remove('title-visible');
   resizeBtn.onpointermove = null;
   resizeBtn.releasePointerCapture(e.pointerId);
 });

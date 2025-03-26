@@ -113,6 +113,14 @@ h2 {
   touch-action: none;
 }
 
+.playground .btn.title-visible::after {
+  position: absolute;
+  width: max-content;
+  content: attr(title);
+  background-color: whitesmoke;
+  transform: translate(-100%, -48px);
+}
+
 .playground .btn:active {
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
   transform: scale(.9);
