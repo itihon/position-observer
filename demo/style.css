@@ -83,7 +83,7 @@ h2 {
 .outer-container {
   position: relative;
 
-  width: 80vw;
+  width: max(40vw, 320px);
   height: 60vh;
 
   resize: both;
