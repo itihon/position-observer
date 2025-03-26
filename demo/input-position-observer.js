@@ -9,14 +9,16 @@ const ctx = {
   tooltipHeight
 };
 
-const callback = (target, targetRect, ctx) => {
+function callback(target, targetRect, ctx) {
   const { tooltip, tooltipHeight } = ctx;
-  const { style } = tooltip;
   const { left, top } = targetRect;
   const { scrollLeft, scrollTop } = document.documentElement;
   const offsetCorner = 90;
 
-  style.transform = `translate(${left - offsetCorner + scrollLeft}px, ${top - tooltipHeight + scrollTop}px)`;
+  const x = left - offsetCorner + scrollLeft;
+  const y = top - tooltipHeight + scrollTop;
+
+  tooltip.style.transform = `translate(${x}px, ${y}px)`;
 };
 
 const positionObserver = new PositionObserver(callback, ctx);
