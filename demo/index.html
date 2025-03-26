@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Position observer | Javascript position observer based on IntersectionObserver.</title>
+    <meta name="description" content="Javascript position observer allows to execute a callback function every time position of a target element changes as a result of resize, scroll or left and top coordinates change.">
+    <link rel="stylesheet" href="style.css">
+   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  </head>
+  <body>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li class="nav-link"><a href="index.html">Demo</a></li>
+        <li class="nav-link"><a href="index.html">How it works</a></li>
+        <li class="nav-link"><a href="index.html">Performance</a></li>
+      </ul>
+    </nav>
+
+    <section class="playground">
+      <div class="outer-container">
+        <input class="observed-element" type="text" placeholder="observed element">
+      </div>
+    </section>
+
+    <form name="controls">
+      <input type="button" name="scrollBtn" value="Scroll into view">
+    </form>
+
+    <div class="tooltip">
+      This is an absolutely positioned container, it has to stick to the observed element.
+    </div>
+    <script type="module" src="bundle/index.js"></script>
+  </body>
+</html>

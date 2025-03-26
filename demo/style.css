@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  padding: 16px;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(aliceblue, lightslategray);
+  background-repeat: no-repeat;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: min(768px, 100%);
+}
+
+.nav-link {
+  flex-grow: 1;
+  list-style: none;
+  padding-block: 4px;
+  font-size: 18px;
+  background: linear-gradient(135deg, aliceblue, 90%, lightslategray);
+}
+
+.nav-link:not(:nth-child(1)) {
+  border-left: 1px solid slategray;
+}
+
+.nav-link a {
+  display: block;
+
+  color: rgb(41, 48, 53);
+  text-decoration: none;
+  text-align: center;
+}
+
+.tooltip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130px;
+  height: 100px;
+  padding: 4px;
+
+  font-size: 12px;
+  line-height: 14px;
+  text-indent: 4px;
+
+  background: url(./speech-bubble-1.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .5));
+
+  color: white;
+}
+
+.playground {
+  width: 100%;
+}
+
+.outer-container,
+.inner-container {
+  margin: 0 auto;
+  resize: both;
+  overflow: scroll;
+  outline: 4px solid slategray;
+}
+
+.outer-container {
+  padding: 20vh 20vw;
+  width: 80vw;
+  height: 80vh;
+  background-color: whitesmoke;
+  border-top-left-radius: 16px;
+}
+
+.inner-container {
+  display: inline-block;
+  padding: 10vh 10vw;
+  border-top-left-radius: 8px;
+  width: 50vw;
+  height: 50vh;
+}
+
+.observed-element {
+  height: 24px;
+  width: 120px;
+}
+
+.filler-block {
+  display: block;
+  position: relative;
+  width: 10px;
+  height: 60vh;
+/*   background-color: red; */
+}
+
+.filler-inline {
+  left: -120px;
+  display: inline;
+  position: relative;
+  width: 120vw;
+  height: 10px;
+  background-color: blue;
+}
