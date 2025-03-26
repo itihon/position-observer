@@ -1,10 +1,15 @@
 import './input-position-observer.js';
 
 const resizeBtn = document.querySelector('[name="resizeBtn"]');
+const undoBtn = document.querySelector('[name="undoBtn"]');
 const container = resizeBtn.parentNode.firstElementChild;
 const { width, height } = container.getBoundingClientRect();
 
-container.scroll({ behavior: 'smooth', left: container.scrollWidth / 2 - width / 2, top: container.scrollHeight / 2 - height / 2});
+container.scroll({ 
+  behavior: 'smooth', 
+  left: container.scrollWidth / 2 - width / 2, 
+  top: container.scrollHeight / 2 - height / 2
+});
 
 let containerRect;
 let event;
@@ -32,3 +37,21 @@ resizeBtn.addEventListener('pointerup', (e) => {
   resizeBtn.releasePointerCapture(e.pointerId);
 });
 
+undoBtn.addEventListener('click', () => {
+  const originalWidth = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue('--playground-width');
+
+  const originalHeight = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue('--playground-height');
+
+  container.style.width = originalWidth;
+  container.style.height = originalHeight;
+
+  container.scroll({ 
+    behavior: 'smooth', 
+    left: container.scrollWidth / 2 - width / 2, 
+    top: container.scrollHeight / 2 - height / 2
+  });
+});

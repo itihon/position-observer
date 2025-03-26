@@ -1,3 +1,8 @@
+html {
+  --playground-width: max(40vw, 320px);
+  --playground-height: 60vh;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -19,6 +24,7 @@ body {
 
 h2 {
   text-align: center;
+  padding-block: 8px;
 }
 
 .nav-links {
@@ -83,8 +89,8 @@ h2 {
 .outer-container {
   position: relative;
 
-  width: max(40vw, 320px);
-  height: 60vh;
+  width: var(--playground-width);
+  height: var(--playground-height);
 
   resize: both;
   overflow: scroll;
@@ -93,25 +99,33 @@ h2 {
   background-color: rgba(255, 255, 255, .3);
 }
 
-.resize-btn {
+.playground .btn {
   position: absolute;
-  right: 20px;
   bottom: 20px;
   height: 48px;
   width: 48px;
   border: none;
-  background: url(./resize.svg);
   background-position: center;
   background-size: contain;
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .5));
-
+  
   /* in order pointer events to work */
   touch-action: none;
 }
 
-.resize-btn:active {
+.playground .btn:active {
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
   transform: scale(.9);
+}
+
+.resize-btn {
+  right: 20px;
+  background: url(./resize.svg);
+}
+
+.undo-btn {
+  right: 78px;
+  background: url(./undo.svg);
 }
 
 .observed-element {
@@ -125,11 +139,11 @@ h2 {
 .description {
   width: fit-content;
   margin: 0 auto;
-  padding: 4px;
+  padding: 8px;
 }
 
 .code {
-  width: min(80vw, 450px);
+  width: min(90vw, 450px);
   margin: 0 auto;
   font-size: min(3vmin, 14px);
 }
