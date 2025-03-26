@@ -11,14 +11,14 @@ nav {
   justify-content: center;
 }
 
-section {
-  padding: 16px;
-}
-
 body {
   height: 200vh;
   background: linear-gradient(aliceblue, lightslategray);
   background-repeat: no-repeat;
+}
+
+h2 {
+  text-align: center;
 }
 
 .nav-links {
@@ -120,4 +120,16 @@ body {
   width: 120px;
   outline: 1px solid #447ebb;
   border: 1px solid #447ebb;
+}
+
+.description {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 4px;
+}
+
+.code {
+  width: min(80vw, 450px);
+  margin: 0 auto;
+  font-size: min(3vmin, 14px);
 }

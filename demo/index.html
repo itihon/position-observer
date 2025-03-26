@@ -7,7 +7,8 @@
     <title>Position observer | Javascript position observer based on IntersectionObserver.</title>
     <meta name="description" content="Javascript position observer allows to execute a callback function every time position of a target element changes as a result of resize, scroll or left and top coordinates change.">
     <link rel="stylesheet" href="style.css">
-   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/nord.min.css">
   </head>
   <body>
     <nav class="nav">
@@ -19,11 +20,33 @@
     </nav>
 
     <section class="content">
+
+      <h2>Playground</h2>
+      <div class="description">
+        Try to scroll or resize the container below, or scroll or resize the browser window.
+      </div>
+
       <div class="playground">
         <div class="outer-container">
           <input class="observed-element" type="text" placeholder="observed element">
         </div>
         <button class="resize-btn" name="resizeBtn"></button>
+      </div>
+
+      <h2>Code</h2>
+      <div class="code">
+        <pre><code class="language-js" id="js-code">...</code></pre>
+        <script>
+          addEventListener('load', () => {
+            fetch('./input-position-observer.js')
+              .then(res => res.text())
+              .then(code => {
+                const codeBox = document.querySelector('#js-code');
+                codeBox.textContent = code;
+                hljs.highlightAll();
+              });
+          });
+        </script>
       </div>
     </section>
 
@@ -31,5 +54,7 @@
       This is an absolutely positioned container, it has to stick to the observed element.
     </div>
     <script type="module" src="bundle/index.js"></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/javascript.min.js"></script>
   </body>
 </html>
