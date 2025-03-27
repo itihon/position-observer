@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Position observer | How javascript position observer works.</title>
+    <meta name="description" content="Position observer user four instances of IntersectionObserver to detect element's position change.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  </head>
+  <body>
+    <header class="header">
+      <span class="logo"></span><h1>Position observer</h1>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li class="nav-link"><a href="index.html">Demo</a></li>
+          <li class="nav-link current"><a href="how-it-works.html">How it works</a></li>
+          <li class="nav-link"><a href="performance.html">Performance</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="content">
+
+      <h2>How it works</h2>
+      <div class="description">
+        Try to scroll or resize the container below, or scroll or resize the browser window.
+      </div>
+
+      <div class="playground">
+        <div class="outer-container">
+          <input class="observed-element" type="text" placeholder="observed element">
+        </div>
+        <button class="btn undo-btn" name="undoBtn" title="Push to undo."></button>
+        <button class="btn resize-btn" name="resizeBtn" title="Drag to resize."></button>
+      </div>
+
+      <h2>Explanation</h2>
+
+      <h2>Why four observers?</h2>
+    </section>
+
+    <footer class="footer">
+      <nav class="footer-links">
+        <a class="footer-link github-link" href="https://github.com/itihon/position-observer">Position observer</a>
+        <a class="footer-link npm-link" href="https://www.npmjs.com/package/@itihon/position-observer">Install</a>
+      </nav>
+      <p class="credit">
+        Icons were found on <a href="https://www.svgrepo.com">SVG Repo</a>
+      </p>
+    </footer>
+
+    <div class="tooltip">
+      This is an absolutely positioned tooltip, it has to stick to the observed element.
+    </div>
+    <script type="module" src="bundle/how-it-works.js"></script>
+  </body>
+</html>
