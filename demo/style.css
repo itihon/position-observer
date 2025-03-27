@@ -16,7 +16,6 @@ nav {
 }
 
 body {
-  height: 200vh;
   background: linear-gradient(aliceblue, lightslategray);
   background-repeat: no-repeat;
 }
@@ -32,12 +31,22 @@ h2 {
   padding-block: 8px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   padding-inline: 6vw;
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
   align-items: center;
+}
+
+footer {
+  padding: 16px;
+  width: 100%;
 }
 
 .header {
@@ -102,7 +111,6 @@ header {
   display: block;
 
   color: rgb(41, 48, 53);
-  text-decoration: none;
   text-align: center;
 }
 
@@ -203,6 +211,63 @@ header {
 
 .code {
   width: min(90vw, 450px);
-  margin: 0 auto;
+  margin: 16px auto;
   font-size: min(3vmin, 14px);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-around;
+  align-items: flex-end;
+  background: linear-gradient(rgba(0, 0, 0, 0), #3083c9);
+  color: white
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 0;
+}
+
+.footer-link {
+  display: flex;
+  height: 24px;
+  width: fit-content;
+  align-items: center;
+  color: white;
+}
+
+.footer-link::before {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  padding-inline: 4px;
+  
+  content: '';
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.github-link::before {
+  background-image: url(./github-mark-white.svg);
+}
+
+.npm-link::before {
+  background-image: url(./npm-svgrepo-com.svg);
+}
+
+.credit {
+  font-size: 12px;
+}
+
+.credit a {
+  text-decoration: underline;
 }
