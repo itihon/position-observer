@@ -33,8 +33,8 @@
     "build": "pnpm run build:esm",
     "build:esm": "rollup lib/index.js --file dist/esm/index.js --format esm",
     "build:types": "tsc lib/index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
-    "build:demo": "rollup --config rollup.config.js demo/src/index.js --file demo/bundle/index.js --format esm",
-    "build:demo:watch": "watch 'pnpm run build:demo' ./demo --ignoreDirectoryPattern=/bundle/",
+    "build:demo": "rollup --config rollup.config.js demo/src/*.js --dir demo/bundle/ --format esm",
+    "build:demo:watch": "pnpm run build:demo --watch",
     "test": "pnpm run test:client",
     "test:client": "jest --testPathPattern=\"__tests__.*client\\.test\\.js\" --env=\"jsdom\"",
     "test:watch": "jest --watch",
@@ -67,8 +67,7 @@
     "prettier": "3.5.3",
     "rollup": "^4.35.0",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1",
-    "watch": "^1.0.2"
+    "typescript-eslint": "^8.26.1"
   },
   "config": {
     "commitizen": {
