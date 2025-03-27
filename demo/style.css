@@ -67,11 +67,31 @@ header {
 }
 
 .nav-link {
+  position: relative;
   flex-grow: 1;
   list-style: none;
   padding-block: 4px;
   font-size: 18px;
   background: linear-gradient(135deg, aliceblue, 90%, lightslategray);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transition: width .1s ease-out;
+}
+
+.nav-link.current::after {
+  background: #3083c9;
+  width: 100%;
+}
+
+.nav-link:not(.current):hover::after {
+  background: slategray;
+  width: 100%;
 }
 
 .nav-link:not(:nth-child(1)) {
