@@ -20,13 +20,11 @@ function resizing(e) {
 };
 
 function resize() {
-  const { scrollLeft, scrollTop } = document.documentElement;
-  
   resizeBtn.classList.remove('title-visible');
 
   containerRect = container.getBoundingClientRect(); 
-  container.style.width = `${event.x - containerRect.left + 48 + scrollLeft}px`;
-  container.style.height = `${event.y - containerRect.top + 48 + scrollTop}px`;
+  container.style.width = `${event.x - containerRect.left + 48}px`;
+  container.style.height = `${event.y - containerRect.top + 48}px`;
 }
 
 resizeBtn.addEventListener('pointerdown', (e) => {
