@@ -21,6 +21,9 @@ importers:
       '@eslint/js':
         specifier: ^9.22.0
         version: 9.22.0
+      '@itihon/position-observer':
+        specifier: ^1.0.3
+        version: 1.0.3
       '@rollup/plugin-node-resolve':
         specifier: ^16.0.1
         version: 16.0.1(rollup@4.35.0)
@@ -362,6 +365,9 @@ packages:
   '@istanbuljs/schema@0.1.3':
     resolution: {integrity: sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==}
     engines: {node: '>=8'}
+
+  '@itihon/position-observer@1.0.3':
+    resolution: {integrity: sha512-PpXmg9goEML0W5uU9H0yaUTgd/+EMM0dMChN52fnC/aJORfzMqt2/BF7JYs7xzKYzs1uvMYnmBd7Tj/idPYO/Q==}
 
   '@jest/console@29.7.0':
     resolution: {integrity: sha512-5Ni4CU7XHQi32IJ398EEP4RrB8eV09sXP2ROqD4bksHrnTree52PsxvX8tpL8LvTZ3pFzXyPbNQReSN41CAhOg==}
@@ -2664,6 +2670,10 @@ snapshots:
       resolve-from: 5.0.0
 
   '@istanbuljs/schema@0.1.3': {}
+
+  '@itihon/position-observer@1.0.3':
+    dependencies:
+      request-animation-frame-loop: 1.0.1
 
   '@jest/console@29.7.0':
     dependencies:
