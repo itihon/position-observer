@@ -11,9 +11,8 @@ html {
 }
 
 nav {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-grow: 1;
 }
 
 body {
@@ -22,9 +21,41 @@ body {
   background-repeat: no-repeat;
 }
 
+h1 {
+  width: fit-content;
+  padding-inline: 8px;
+  font-size: min(5vmin, 24px);
+}
+
 h2 {
   text-align: center;
   padding-block: 8px;
+}
+
+header {
+  padding-inline: 6vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
+}
+
+.header {
+  border-bottom: 1px solid #3083c9;
+}
+
+.nav {
+  justify-content: flex-end;
+}
+
+.logo {
+  display: block;
+  width: min(8vmin, 32px);
+  height: min(8vmin, 32px);
+  background: url(./favicon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .5));
 }
 
 .nav-links {
