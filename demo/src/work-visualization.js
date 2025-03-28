@@ -5,7 +5,7 @@ let observerRight;
 let observerBottom;
 let observerLeft;
 let timeout;
-let delay = 1000;
+let delay = 500;
 
 const originalFn = PositionObserver.prototype.__observerCallback;
 
@@ -43,8 +43,6 @@ PositionObserver.prototype.__observerCallback = function (entries, self) {
       if (this !== observerBottom) {
         observerBottom = this;
         resizeObserverRect(observerBottomRect, entry.rootBounds);
-        clearTimeout(timeout);
-        setTimeout(flashed, delay);
       }
     } 
 
@@ -52,8 +50,6 @@ PositionObserver.prototype.__observerCallback = function (entries, self) {
       if (this !== observerLeft) {
         observerLeft = this;
         resizeObserverRect(observerLeftRect, entry.rootBounds);
-        clearTimeout(timeout);
-        setTimeout(flashed, delay);
       }
     }
 
@@ -61,8 +57,6 @@ PositionObserver.prototype.__observerCallback = function (entries, self) {
       if (this !== observerTop) {
         observerTop = this;
         resizeObserverRect(observerTopRect, entry.rootBounds);
-        clearTimeout(timeout);
-        setTimeout(flashed, delay);
       }
     }
 
@@ -70,11 +64,12 @@ PositionObserver.prototype.__observerCallback = function (entries, self) {
       if (this !== observerRight) {
         observerRight = this;
         resizeObserverRect(observerRightRect, entry.rootBounds);
-        clearTimeout(timeout);
-        setTimeout(flashed, delay);
       }
     }
   }
+
+  clearTimeout(timeout);
+  timeout = setTimeout(flashed, delay);
   
   originalFn.call(this, entries, self);
 };
