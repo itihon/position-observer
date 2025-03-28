@@ -34,50 +34,44 @@ const resizeObserverRect = (observerRectElement, rect) => {
 
 PositionObserver.prototype.__observerCallback = function (entries, self) {
 
-  const margins = this.rootMargin.split(' ');
   const entry = entries[entries.length - 1];
   const { target } = entry;
+  const observers = self.__observers.get(target);
   
   if (this.isFirstCall(target)) {
-    for (let idx = 0; idx < margins.length; idx ++) {
-      if (margins[idx] !== '0px' && idx === 0) {
-        if (this !== observerBottom) {
-          observerBottom = this;
-          resizeObserverRect(observerBottomRect, entry.rootBounds);
-          clearTimeout(timeout);
-          setTimeout(flashed, delay);
-        }
-        break;
-      } 
-
-      if (margins[idx] !== '0px' && idx === 1) {
-        if (this !== observerLeft) {
-          observerLeft = this;
-          resizeObserverRect(observerLeftRect, entry.rootBounds);
-          clearTimeout(timeout);
-          setTimeout(flashed, delay);
-        }
-        break;
+    if (this === observers.bottom) {
+      if (this !== observerBottom) {
+        observerBottom = this;
+        resizeObserverRect(observerBottomRect, entry.rootBounds);
+        clearTimeout(timeout);
+        setTimeout(flashed, delay);
       }
+    } 
 
-      if (margins[idx] !== '0px' && idx === 2) {
-        if (this !== observerTop) {
-          observerTop = this;
-          resizeObserverRect(observerTopRect, entry.rootBounds);
-          clearTimeout(timeout);
-          setTimeout(flashed, delay);
-        }
-        break;
+    if (this === observers.left) {
+      if (this !== observerLeft) {
+        observerLeft = this;
+        resizeObserverRect(observerLeftRect, entry.rootBounds);
+        clearTimeout(timeout);
+        setTimeout(flashed, delay);
       }
+    }
 
-      if (margins[idx] !== '0px' && idx === 3) {
-        if (this !== observerRight) {
-          observerRight = this;
-          resizeObserverRect(observerRightRect, entry.rootBounds);
-          clearTimeout(timeout);
-          setTimeout(flashed, delay);
-        }
-        break;
+    if (this === observers.top) {
+      if (this !== observerTop) {
+        observerTop = this;
+        resizeObserverRect(observerTopRect, entry.rootBounds);
+        clearTimeout(timeout);
+        setTimeout(flashed, delay);
+      }
+    }
+
+    if (this === observers.right) {
+      if (this !== observerRight) {
+        observerRight = this;
+        resizeObserverRect(observerRightRect, entry.rootBounds);
+        clearTimeout(timeout);
+        setTimeout(flashed, delay);
       }
     }
   }
