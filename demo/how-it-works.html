@@ -39,6 +39,14 @@
 
       <h2>Explanation</h2>
 
+      <div class="description">
+        There are four <i>IntersectionObserver</i> instances created for every target element, one for each side of the element.
+        Their boundaries are spread from the viewport edges to the observed element's edges slightly ovelapping the element.
+        After the element moves vertically up or down the "top" and "bottom" observers are recreated, 
+        if the movement was horizontal the "left" and "right" pair of observers are recreated.
+        In case of diagonal movement, all observers are recreated.
+      </div>
+
       <h2>Why four observers?</h2>
     </section>
 
