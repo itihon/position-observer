@@ -10,4 +10,9 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   { ignores: ["dist/*"] },
+  {
+    rules: {
+      "@typescript-eslint/no-this-alias": "off"
+    },
+  },
 ];
