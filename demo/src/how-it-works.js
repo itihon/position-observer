@@ -1,2 +1,4 @@
-import './input-position-observer.js';
+import './work-visualization.js';  
 import './playground.js';
+
+

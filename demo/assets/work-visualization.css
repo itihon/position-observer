@@ -1,0 +1,29 @@
+.observer-bounds {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 55, 150, 0.1);
+  z-index: -1;
+}
+
+.observer-top {
+  border-bottom: 1px solid #3083c9;
+}
+
+.observer-right {
+  border-left: 1px solid #3083c9;
+}
+
+.observer-bottom {
+  border-top: 1px solid #3083c9;
+}
+
+.observer-left {
+  border-right: 1px solid #3083c9;
+}
+
+.recreated {
+  background-color: rgba(14, 43, 62, 0.5);
+  border-color: #47fcff;
+  border-width: 3px;
+}
