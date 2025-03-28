@@ -1,4 +1,4 @@
-import PositionObserver from "../dist/esm/index.js";
+import { P as PositionObserver } from "../demo/bundle/index-CH_OOChq.js";
 // import { PositionObserver } from '../position-observer.js';
 import { showCapturedArea, showObservingArea } from "./debug.js";
 
