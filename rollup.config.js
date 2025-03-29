@@ -2,13 +2,22 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import copy from 'rollup-plugin-copy'
 
+const env = process.env.BUILD;
+
 const importResplace = 
-  process.env.BUILD === 'deploy' 
+  env === 'deploy' 
     ? { 
       'import PositionObserver from \'../../lib/index.js\';': 
         'import PositionObserver from \'@itihon/position-observer\';'
     } 
     : undefined;
+
+const replaceLocalImport = (contents/*, fileName*/) => 
+  env === 'deploy' 
+  ? contents.toString().replace(...Object.entries(importResplace)[0])
+  : contents;
+
+const rename = (name, extension/*, fullPath*/) => `example.${name}.${extension}`;
 
 export default {
   plugins: [
@@ -20,7 +29,12 @@ export default {
     nodeResolve(), 
     copy({
       targets: [
-        { src: 'demo/input-position-observer.js', dest: 'demo/assets/' },
+        { 
+          src: 'demo/src/input-position-observer.js', 
+          dest: 'demo/bundle/',
+          transform: replaceLocalImport,
+          rename,
+        },
       ],
     }),
   ],
