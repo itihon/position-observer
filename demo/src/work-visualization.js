@@ -75,3 +75,14 @@ PositionObserver.prototype.__observerCallback = function (entries, self) {
 };
 
 import('./input-position-observer.js');
+
+// const originalCreateObserver = PositionObserver.__createObserver;
+// 
+// PositionObserver.__createObserver = function(target, targetRect, side, observers, self) {
+// 
+//   console.log(side);
+// 
+//   target.parentNode.scroll(1000, 1000);
+// 
+//   originalCreateObserver.call(this, target, targetRect, side, observers, self);
+// }
