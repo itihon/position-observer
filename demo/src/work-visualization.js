@@ -27,8 +27,13 @@ const resizeObserverRect = (observerRectElement, rect) => {
   const { style, classList } = observerRectElement;
 
   style.transform = `translate(${left + scrollLeft}px, ${top + scrollTop}px)`;
-  style.width = `${width}px`;
   style.height = `${height}px`;
+  if (left) {
+    style.right = `${left}px`;
+  }
+  else {
+    style.width = `${width}px`;
+  }
   classList.add('recreated');
 };
 
