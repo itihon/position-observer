@@ -1,4 +1,4 @@
-import PositionObserver from "@itihon/position-observer";
+import PositionObserver from '../../lib/index.js';
 
 const input = document.querySelector('.observed-element');
 const tooltip = document.querySelector('.tooltip');

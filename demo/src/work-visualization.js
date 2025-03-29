@@ -1,4 +1,4 @@
-import PositionObserver from "@itihon/position-observer";
+import PositionObserver from '../../lib/index.js';
 
 let observerTop; 
 let observerRight;
