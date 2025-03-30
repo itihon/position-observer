@@ -20,6 +20,7 @@
   "bugs": {
     "url": "https://github.com/itihon/position-observer/issues"
   },
+  "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "browser": "dist/esm/index.js",
