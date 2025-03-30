@@ -41,6 +41,7 @@
       <div class="description">
         There are four <i>IntersectionObserver</i> instances created for every target element, one for each side of the element.
         Their boundaries are spread from the viewport edges to the observed element's edges slightly ovelapping the element.
+        Once the element's position change is detected, it starts a <a href="https://github.com/itihon/request-animation-frame-loop">request animation frame loop</a>.
         After the element moves vertically up or down the "top" and "bottom" observers are recreated, 
         if the movement was horizontal the "left" and "right" pair of observers are recreated.
         In case of diagonal movement, all observers are recreated.
@@ -49,7 +50,7 @@
       <h2>Why four observers?</h2>
       <div class="description">
         It guarantees that movement of an observed element in any direction will be detected, 
-        event if it is partly overlapped by its parent scrollable container, making this approach reliable and quirks-free.
+        even if it is partly overlapped by its parent scrollable container, making this approach reliable and quirks-free.
         The limitation is when an observed element is fully scrolled out of view.
       </div>
     </section>
