@@ -1,6 +1,7 @@
 name: Deploy demo to Github pages
 
 on:
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
   push:
     branches: [ "demo" ]
   pull_request:
@@ -25,28 +26,33 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
 
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+      id: pages
+
     - run: pnpm install
     - run: pnpm run build
     - run: pnpm run build:demo:deploy
 
-    - uses: actions/upload-artifact@v4
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        name: github-pages
-        path: demo
-
+        path: demo/
 
   deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     needs: [build]
     runs-on: ubuntu-latest
+
     steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-    
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
+        id: deployment
