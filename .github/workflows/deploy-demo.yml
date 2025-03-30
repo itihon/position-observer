@@ -1,0 +1,40 @@
+name: Deploy demo to Github pages
+
+on:
+  push:
+    branches: [ "demo" ]
+  pull_request:
+    branches: [ "demo" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+    - run: pnpm install
+    - run: pnpm run build:demo:deploy
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: app-build
+        path: demo
+
+
+  deploy:
+    needs: [build]
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: app-build
+      - run: ls demo
