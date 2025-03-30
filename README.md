@@ -1,5 +1,7 @@
 ## Position observer
 
+See [Position observer](https://itihon.github.io/position-observer/) demo page.
+
 ### Installation
 
 ```sh
