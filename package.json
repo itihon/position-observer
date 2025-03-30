@@ -1,7 +1,7 @@
 {
   "name": "@itihon/position-observer",
-  "version": "1.0.7",
-  "description": "Observes position change of an element within viewport as a result of resize, scroll, left or top coordinates change.",
+  "version": "1.0.8",
+  "description": "Observes position change of an element within viewport as a result of resize, scroll, left or top coordinates change, or zooming in and out",
   "homepage": "https://itihon.github.io/position-observer/",
   "keywords": [
     "position",
