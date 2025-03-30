@@ -1,5 +1,10 @@
 ## Position observer
 
+Runs a callback function when position of an observed element changes.
+Uses `IntersectionObserver` to detect position change.
+When position change detected, stops observing the element and starts a [`request animation frame loop`](https://github.com/itihon/request-animation-frame-loop/) in which the callback will be invoked.
+When position stops changing, it stops the request animation frame loop and returnes to observing the element.
+
 See [Position observer](https://itihon.github.io/position-observer/) demo page.
 
 ### Installation
