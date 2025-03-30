@@ -1,0 +1,13 @@
+.observed-element {
+  margin: 30px 15px;
+}
+
+.tooltip {
+  width: 85px;
+  height: 55px;
+  padding: 2px;
+
+  font-size: 8px;
+  line-height: 8px;
+  text-indent: 2px;
+}
