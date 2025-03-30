@@ -8,19 +8,23 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-      strategy:
+    strategy:
         matrix:
           node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Setup PNPM
+      uses: pnpm/action-setup@v4
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
+
     - run: pnpm install
     - run: pnpm run build:demo:deploy
 
@@ -32,6 +36,7 @@ jobs:
 
   deploy:
     needs: [build]
+    runs-on: ubuntu-latest
     steps:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
