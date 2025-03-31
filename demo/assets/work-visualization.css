@@ -31,3 +31,9 @@
   border-color: #47fcff;
   border-width: 3px;
 }
+
+.observed-element {
+  width: max(115px, 40%);
+  height: max(24px, 10%);
+  text-align: center;
+}
