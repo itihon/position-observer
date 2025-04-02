@@ -22,8 +22,8 @@ importers:
         specifier: ^9.22.0
         version: 9.22.0
       '@itihon/position-observer':
-        specifier: ^1.0.9
-        version: 1.0.9
+        specifier: ^1.0.10
+        version: 1.0.10
       '@rollup/plugin-node-resolve':
         specifier: ^16.0.1
         version: 16.0.1(rollup@4.35.0)
@@ -369,8 +369,8 @@ packages:
     resolution: {integrity: sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==}
     engines: {node: '>=8'}
 
-  '@itihon/position-observer@1.0.9':
-    resolution: {integrity: sha512-CF7R3lnVHyv2c6JB+8+YCrVoG0pZS15Bfc3OtCTFFBTg4Ko9hu/e60jw1GOu5vTbyBxa5WWFaEznilr4AAJ3Uw==}
+  '@itihon/position-observer@1.0.10':
+    resolution: {integrity: sha512-RE1fIu9ooXbXbKMWrK+cppxytG1uwOGoLKfT34VQpo0bivVZ2LftvzuimcLTOXeGIKYacM50D1StPpteoco5Ww==}
 
   '@jest/console@29.7.0':
     resolution: {integrity: sha512-5Ni4CU7XHQi32IJ398EEP4RrB8eV09sXP2ROqD4bksHrnTree52PsxvX8tpL8LvTZ3pFzXyPbNQReSN41CAhOg==}
@@ -2722,7 +2722,7 @@ snapshots:
 
   '@istanbuljs/schema@0.1.3': {}
 
-  '@itihon/position-observer@1.0.9':
+  '@itihon/position-observer@1.0.10':
     dependencies:
       request-animation-frame-loop: 1.0.1
 
