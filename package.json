@@ -28,8 +28,8 @@
   "scripts": {
     "commit": "cz",
     "prepublishOnly": "pnpm run build",
-    "format:check": "prettier --check \"{lib,__tests__}/**/*.{js,mjs,ts}\"",
-    "format:write": "prettier --write \"{lib,__tests__}/**/*.{js,mjs,ts}\"",
+    "format:check": "prettier --check \"{lib,__tests__,demo}/**/*.{js,mjs,ts}\"",
+    "format:write": "prettier --write \"{lib,__tests__,demo}/**/*.{js,mjs,ts}\"",
     "lint": "eslint --fix .",
     "build": "pnpm run build:esm",
     "build:esm": "rollup lib/index.js --file dist/esm/index.js --format esm",
@@ -79,7 +79,7 @@
     }
   },
   "lint-staged": {
-    "{lib,__tests__}/**/*.{js,mjs,ts}": [
+    "{lib,__tests__,demo}/**/*.{js,mjs,ts}": [
       "prettier --write",
       "eslint --fix"
     ]
