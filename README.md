@@ -1,9 +1,9 @@
 ## Position observer
 
-Runs a callback function when position of an observed element changes.
+Runs a callback function when position or size of an observed element changes as a result of scroll or resize of a parent container or window, zooming in and out the page, or setting left and top coordinates of an observed element.
 Uses `IntersectionObserver` to detect position change.
 When position change detected, stops observing the element and starts a [`request animation frame loop`](https://github.com/itihon/request-animation-frame-loop/) in which the callback will be invoked.
-When position stops changing, it stops the request animation frame loop and returnes to observing the element.
+When position stops changing, it stops the request animation frame loop and returns to observing the element.
 
 See [Position observer](https://itihon.github.io/position-observer/) demo page.
 
