@@ -43,6 +43,7 @@
         Their boundaries are spread from the viewport edges to the observed element's edges slightly ovelapping the element.
         Once the element's position change is detected, it starts a <a href="https://www.npmjs.com/package/request-animation-frame-loop">request animation frame loop</a>.
         When the element's bounding rectangle stops changing, the <i>request animation frame loop</i> stops.
+        If the change affected one dimension, only one observer will be recreated.
         If the element moved vertically up or down the "top" and "bottom" observers are recreated, 
         if the movement was horizontal the "left" and "right" pair of observers are recreated.
         In case of diagonal movement, all observers are recreated.
