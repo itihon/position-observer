@@ -26,15 +26,15 @@ const resizeObserverRect = (observerRectElement, rect) => {
   style.height = `${height}px`;
   if (left) {
     style.right = `${left}px`;
-  }
-  else {
+  } else {
     style.width = `${width}px`;
   }
   classList.add('recreated');
 };
 
 const runIfNew = (
-  (instances = new Map()) => (key, value, fn, ...args) => {
+  (instances = new Map()) =>
+  (key, value, fn, ...args) => {
     if (instances.get(key) !== value) {
       fn(...args);
       instances.set(key, value);
@@ -42,8 +42,8 @@ const runIfNew = (
   }
 )();
 
-PositionObserver.prototype.__observerCallback = function (entries, self) {
-
+PositionObserver.prototype.__observerCallback = function (entries) {
+  const self = this.ctx;
   const entry = entries[entries.length - 1];
   const { target } = entry;
   const observers = self.__observers.get(target);
@@ -57,35 +57,71 @@ PositionObserver.prototype.__observerCallback = function (entries, self) {
   let rightRecords;
   let bottomRecords;
   let leftRecords;
-  
+
   if (this === observers.top) {
-    runIfNew('top', observers.top, resizeObserverRect, observerTopRect, entry.rootBounds);
+    runIfNew(
+      'top',
+      observers.top,
+      resizeObserverRect,
+      observerTopRect,
+      entry.rootBounds,
+    );
   }
 
   if (this === observers.right) {
-    runIfNew('right', observers.right, resizeObserverRect, observerRightRect, entry.rootBounds);
+    runIfNew(
+      'right',
+      observers.right,
+      resizeObserverRect,
+      observerRightRect,
+      entry.rootBounds,
+    );
   }
 
   if (this === observers.bottom) {
-    runIfNew('bottom', observers.bottom, resizeObserverRect, observerBottomRect, entry.rootBounds);
-  } 
+    runIfNew(
+      'bottom',
+      observers.bottom,
+      resizeObserverRect,
+      observerBottomRect,
+      entry.rootBounds,
+    );
+  }
 
   if (this === observers.left) {
-    runIfNew('left', observers.left, resizeObserverRect, observerLeftRect, entry.rootBounds);
+    runIfNew(
+      'left',
+      observers.left,
+      resizeObserverRect,
+      observerLeftRect,
+      entry.rootBounds,
+    );
   }
 
   observers.top.takeRecords = () => {
     topRecords = takeTopRecords.call(observers.top);
     if (topRecords.length) {
-      runIfNew('top', observers.top, resizeObserverRect, observerTopRect, topRecords[topRecords.length - 1].rootBounds);
+      runIfNew(
+        'top',
+        observers.top,
+        resizeObserverRect,
+        observerTopRect,
+        topRecords[topRecords.length - 1].rootBounds,
+      );
     }
     return topRecords;
   };
-  
+
   observers.right.takeRecords = () => {
     rightRecords = takeRightRecords.call(observers.right);
     if (rightRecords.length) {
-      runIfNew('right', observers.right, resizeObserverRect, observerRightRect, rightRecords[rightRecords.length - 1].rootBounds);
+      runIfNew(
+        'right',
+        observers.right,
+        resizeObserverRect,
+        observerRightRect,
+        rightRecords[rightRecords.length - 1].rootBounds,
+      );
     }
     return rightRecords;
   };
@@ -93,7 +129,13 @@ PositionObserver.prototype.__observerCallback = function (entries, self) {
   observers.bottom.takeRecords = () => {
     bottomRecords = takeBottomRecords.call(observers.bottom);
     if (bottomRecords.length) {
-      runIfNew('bottom', observers.bottom, resizeObserverRect, observerBottomRect, bottomRecords[bottomRecords.length - 1].rootBounds);
+      runIfNew(
+        'bottom',
+        observers.bottom,
+        resizeObserverRect,
+        observerBottomRect,
+        bottomRecords[bottomRecords.length - 1].rootBounds,
+      );
     }
     return bottomRecords;
   };
@@ -101,26 +143,32 @@ PositionObserver.prototype.__observerCallback = function (entries, self) {
   observers.left.takeRecords = () => {
     leftRecords = takeLeftRecords.call(observers.left);
     if (leftRecords.length) {
-      runIfNew('left', observers.left, resizeObserverRect, observerLeftRect, leftRecords[leftRecords.length - 1].rootBounds);
+      runIfNew(
+        'left',
+        observers.left,
+        resizeObserverRect,
+        observerLeftRect,
+        leftRecords[leftRecords.length - 1].rootBounds,
+      );
     }
     return leftRecords;
   };
 
   clearTimeout(timeout);
   timeout = setTimeout(flashed, delay);
-  
+
   originalFn.call(this, entries, self);
 };
 
 import('./input-position-observer.js');
 
 // const originalCreateObserver = PositionObserver.__createObserver;
-// 
+//
 // PositionObserver.__createObserver = function(ctx) {
-// 
+//
 //   const { target } = ctx;
-// 
+//
 //   target.parentNode.scroll(1000, 1000);
-// 
+//
 //   originalCreateObserver.call(this, ctx);
 // }
