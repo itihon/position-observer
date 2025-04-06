@@ -5,6 +5,10 @@ Uses `IntersectionObserver` to detect position change.
 When position change detected, stops observing the element and starts a [`request animation frame loop`](https://github.com/itihon/request-animation-frame-loop/) in which the callback will be invoked.
 When position stops changing, it stops the request animation frame loop and returns to observing the element.
 
+> [!NOTE]  
+> - It doesn't run anything in the background when an observed element's bounding box doesn't change.
+> - It doesn't listen to scroll or resize events.
+
 See [Position observer](https://itihon.github.io/position-observer/) demo page.
 
 ### Installation
