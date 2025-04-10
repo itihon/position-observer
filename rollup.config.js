@@ -4,7 +4,7 @@ import copy from 'rollup-plugin-copy'
 
 const env = process.env.BUILD;
 
-const importResplace = 
+const importReplace = 
   env === 'deploy' 
     ? { 
       'import PositionObserver from \'../../lib/index.js\';': 
@@ -16,7 +16,7 @@ const importResplace =
 
 const replaceLocalImport = (contents/*, fileName*/) => 
   env === 'deploy' 
-  ? contents.toString().replace(...Object.entries(importResplace)[0])
+  ? contents.toString().replace(...Object.entries(importReplace)[0])
   : contents;
 
 const rename = (name, extension/*, fullPath*/) => `example.${name}.${extension}`;
@@ -24,7 +24,7 @@ const rename = (name, extension/*, fullPath*/) => `example.${name}.${extension}`
 export default {
   plugins: [
     replace({ 
-      values: { '#': '__', ...importResplace }, 
+      values: { '#': '__', ...importReplace }, 
       preventAssignment: true,
       delimiters: ['', ''],
     }), 
