@@ -1,4 +1,4 @@
-import PositionObserver from '../../lib/index.js';
+import PositionObserver from '../../dist/esm/index.js';
 
 const input = document.querySelector('.observed-element');
 const tooltip = document.querySelector('.tooltip');
@@ -27,17 +27,16 @@ function callback(target, targetRect, ctx) {
   tooltip.style.transform = `translate(${x}px, ${y}px)`;
 
   if (
-    left < containerLeft || 
-    left > containerRight || 
-    top < containerTop || 
+    left < containerLeft ||
+    left > containerRight ||
+    top < containerTop ||
     top > containerBottom
   ) {
     tooltip.style.display = 'none';
-  }
-  else {
+  } else {
     tooltip.style.display = 'block';
   }
-};
+}
 
 for (let i = 0; i < 100; i++) {
   const clonedInput = input.cloneNode();
@@ -49,7 +48,7 @@ for (let i = 0; i < 100; i++) {
   const ctx = {
     container,
     tooltip: clonedTooltip,
-    tooltipHeight
+    tooltipHeight,
   };
 
   const positionObserver = new PositionObserver(callback, ctx);

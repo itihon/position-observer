@@ -1,4 +1,4 @@
-import PositionObserver from '../../lib/debug.js';
+import PositionObserver from '../../dist/debug/esm/index.js';
 
 const input = document.querySelector('.observed-element');
 const tooltip = document.querySelector('.tooltip');

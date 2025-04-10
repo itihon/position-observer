@@ -1,4 +1,4 @@
-import PositionObserver from '../../lib/index.js';
+import PositionObserver from '../../dist/esm/index.js';
 
 const input = document.querySelector('.observed-element');
 const tooltip = document.querySelector('.tooltip');
@@ -6,7 +6,7 @@ const { height: tooltipHeight } = tooltip.getBoundingClientRect();
 
 const ctx = {
   tooltip,
-  tooltipHeight
+  tooltipHeight,
 };
 
 function callback(target, targetRect, ctx) {
@@ -19,7 +19,7 @@ function callback(target, targetRect, ctx) {
   const y = top - tooltipHeight + scrollTop;
 
   tooltip.style.transform = `translate(${x}px, ${y}px)`;
-};
+}
 
 const positionObserver = new PositionObserver(callback, ctx);
 
