@@ -33,7 +33,7 @@
     "lint": "eslint --fix .",
     "build": "pnpm run build:esm && pnpm run build:debug",
     "build:esm": "rollup lib/index.js --file dist/esm/index.js --format esm",
-    "build:debug": "rollup --config replace-private-fields.rollup.config.js lib/debug.js --file dist/debug/esm/index.js --format esm",
+    "build:debug": "rollup --config debug.rollup.config.js lib/debug.js --file dist/debug/esm/index.js --format esm",
     "build:types": "tsc lib/index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "build:demo": "rollup --config rollup.config.js demo/src/*.js --dir demo/bundle/ --format esm",
     "build:demo:watch": "pnpm run build:demo --watch",
