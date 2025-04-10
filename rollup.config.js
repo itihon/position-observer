@@ -6,9 +6,9 @@ const env = process.env.BUILD;
 const importReplace = 
   env === 'deploy' 
     ? { 
-      'import PositionObserver from \'../../lib/index.js\';': 
+      'import PositionObserver from \'../../dist/esm/index.js\';': 
         'import PositionObserver from \'@itihon/position-observer\';',
-      'import PositionObserver from \'../../lib/debug.js\';':
+      'import PositionObserver from \'../../dist/debug/esm/index.js\';':
         'import PositionObserver from \'@itihon/position-observer/debug\';',
     } 
     : undefined;
