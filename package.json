@@ -79,6 +79,7 @@
     "prettier": "3.5.3",
     "rollup": "^4.35.0",
     "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-import-css": "^3.5.8",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.1"
   },
