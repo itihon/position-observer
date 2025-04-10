@@ -1,5 +1,4 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
 import copy from 'rollup-plugin-copy'
 
 const env = process.env.BUILD;
@@ -7,9 +6,9 @@ const env = process.env.BUILD;
 const importReplace = 
   env === 'deploy' 
     ? { 
-      'import PositionObserver from \'../../lib/index.js\';': 
+      'import PositionObserver from \'../../dist/esm/index.js\';': 
         'import PositionObserver from \'@itihon/position-observer\';',
-      'import PositionObserver from \'../../lib/debug.js\';':
+      'import PositionObserver from \'../../dist/debug/esm/index.js\';':
         'import PositionObserver from \'@itihon/position-observer/debug\';',
     } 
     : undefined;
@@ -23,11 +22,6 @@ const rename = (name, extension/*, fullPath*/) => `example.${name}.${extension}`
 
 export default {
   plugins: [
-    replace({ 
-      values: { '#': '__', ...importReplace }, 
-      preventAssignment: true,
-      delimiters: ['', ''],
-    }), 
     nodeResolve(), 
     copy({
       targets: [
