@@ -8,7 +8,9 @@ const importResplace =
   env === 'deploy' 
     ? { 
       'import PositionObserver from \'../../lib/index.js\';': 
-        'import PositionObserver from \'@itihon/position-observer\';'
+        'import PositionObserver from \'@itihon/position-observer\';',
+      'import PositionObserver from \'../../lib/debug.js\';':
+        'import PositionObserver from \'@itihon/position-observer/debug\';',
     } 
     : undefined;
 
