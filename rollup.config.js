@@ -1,5 +1,4 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
 import copy from 'rollup-plugin-copy'
 
 const env = process.env.BUILD;
@@ -23,11 +22,6 @@ const rename = (name, extension/*, fullPath*/) => `example.${name}.${extension}`
 
 export default {
   plugins: [
-    replace({ 
-      values: { '#': '__', ...importReplace }, 
-      preventAssignment: true,
-      delimiters: ['', ''],
-    }), 
     nodeResolve(), 
     copy({
       targets: [
