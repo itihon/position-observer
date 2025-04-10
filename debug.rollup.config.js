@@ -8,6 +8,8 @@ export default {
       values: { '#': '__' }, 
       preventAssignment: true,
       delimiters: ['', ''],
+      include: ['lib/index.js'],
+      exclude: ['*.css'],
     }), 
   ],
 };
