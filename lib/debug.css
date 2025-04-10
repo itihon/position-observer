@@ -1,0 +1,39 @@
+.observer-bounds {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 55, 150, 0.1);
+  z-index: -1;
+}
+
+.observer-top {
+  max-width: 100vw;
+  border-bottom: 1px solid #3083c9;
+}
+
+.observer-right {
+  max-height: 100vh;
+  border-left: 1px solid #3083c9;
+}
+
+.observer-bottom {
+  max-width: 100vw;
+  border-top: 1px solid #3083c9;
+}
+
+.observer-left {
+  max-height: 100vh;;
+  border-right: 1px solid #3083c9;
+}
+
+.recreated {
+  background-color: rgba(14, 43, 62, 0.5);
+  border-color: #47fcff;
+  border-width: 3px;
+}
+
+.observed-element {
+  width: max(115px, 40%);
+  height: max(24px, 10%);
+  text-align: center;
+}
