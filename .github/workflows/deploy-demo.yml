@@ -32,7 +32,7 @@ jobs:
 
     - run: pnpm install
     - run: pnpm run build
-    - run: pnpm run build:demo:deploy
+    - run: pnpm run build:demo
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
