@@ -5,7 +5,7 @@ export default {
   plugins: [
     css(),
     replace({ 
-      values: { '#': '__' }, 
+      values: { '#': '__' }, // to make class private fields available for mocking
       preventAssignment: true,
       delimiters: ['', ''],
       include: ['lib/index.js'],
