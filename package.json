@@ -37,7 +37,6 @@
     "build:types": "tsc lib/index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "build:demo": "rollup --config rollup.config.js demo/src/*.js --dir demo/bundle/ --format esm",
     "build:demo:watch": "pnpm run build:demo --watch",
-    "build:demo:deploy": "pnpm run build:demo --environment BUILD:deploy",
     "test": "pnpm run test:client",
     "test:client": "jest --testPathPattern=\"__tests__.*client\\.test\\.js\" --env=\"jsdom\"",
     "test:watch": "jest --watch",
