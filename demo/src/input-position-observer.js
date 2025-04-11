@@ -1,4 +1,4 @@
-import PositionObserver from '../../dist/esm/index.js';
+import PositionObserver from '@itihon/position-observer';
 
 const input = document.querySelector('.observed-element');
 const tooltip = document.querySelector('.tooltip');
