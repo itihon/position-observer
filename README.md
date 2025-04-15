@@ -49,6 +49,12 @@ npm install @itihon/position-observer
   // stop observing all targets' position change
   positionObserver.disconnect();
 
+  // ... 
+  // ... 
+  
+  // get an iterator of currently observed target elements
+  positionObserver.getTargets();
+
 ```
 
 ### Debugging
