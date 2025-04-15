@@ -46,6 +46,19 @@
         If the element moved vertically up or down the "top" and "bottom" observers are recreated, 
         if the movement was horizontal the "left" and "right" pair of observers are recreated.
         In case of diagonal movement, all observers are recreated.
+
+        <ul>
+          <li>
+            <b>
+              It doesn't run anything in the background when an observed element's bounding box doesn't change.
+            </b>
+          </li>
+          <li>
+            <b>
+              It doesn't listen to scroll or resize events.
+            </b>
+          </li>
+        </ul>
       </div>
 
       <h2>Why four observers?</h2>

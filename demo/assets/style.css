@@ -10,6 +10,14 @@ html {
   font-family: sans;
 }
 
+ul {
+  padding-left: 16px;
+}
+
+li {
+  padding-block: 8px;
+}
+
 nav {
   display: flex;
   flex-grow: 1;
