@@ -2,13 +2,17 @@
 
 Runs a callback function when position or size of an observed element changes as a result of scroll or resize of a parent container or window, zooming in and out the page, or setting left and top coordinates of an observed element.
 Uses `IntersectionObserver` to detect position change.
-When position change detected, stops observing the element and starts a [`request animation frame loop`](https://github.com/itihon/request-animation-frame-loop/) in which the callback will be invoked.
-When position stops changing, it stops the request animation frame loop and returns to observing the element.
+When position change detected, stops observing the element and starts a [`requestAnimationFrame` loop](https://github.com/itihon/request-animation-frame-loop/) in which the callback will be invoked.
+When position stops changing, it stops the `requestAnimationFrame` loop and returns to observing the element.
 
- - It doesn't run anything in the background when an observed element's bounding box doesn't change.
- - It doesn't listen to scroll or resize events.
+![position observer flow chart](./position_observer_flow_chart.svg)
 
-**See [Position observer](https://itihon.github.io/position-observer/) demo page.**
+ - **It doesn't run anything in the background when the observed element's bounding box doesn't change.**
+ - **It doesn't listen to scroll or resize events.**
+
+> **See [Position observer](https://itihon.github.io/position-observer/) demo page.**
+
+Also, for more details see [Detecting size and position change of a DOM element as a result of scroll, resize or zoom with IntersectionObserver.](https://dev.to/itihon/detecting-size-and-position-change-of-a-dom-element-as-a-result-of-scroll-resize-or-zoom-with-29ai).
 
 ### Installation
 
