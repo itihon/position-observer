@@ -21,6 +21,10 @@ export default class PositionObserver {
      */
     unobserve(target: HTMLElement): void;
     disconnect(): void;
+    /**
+     * @returns {MapIterator<HTMLElement>}
+     */
+    getTargets(): MapIterator<HTMLElement>;
     #private;
 }
 export type PositionObserverCallback = (target: HTMLElement, targetRect: DOMRect, ctx: any) => void;
