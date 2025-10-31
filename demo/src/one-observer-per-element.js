@@ -13,7 +13,7 @@ function callback(target, targetRect, ctx) {
   const { container, tooltip, tooltipHeight } = ctx;
   const { left, top } = targetRect;
   const { scrollLeft, scrollTop } = document.documentElement;
-  const offsetCorner = 60;
+  const offsetCorner = 25;
   const {
     top: containerTop,
     right: containerRight,
