@@ -5,21 +5,21 @@ const tooltip = document.querySelector('.tooltip');
 const { height: tooltipHeight } = tooltip.getBoundingClientRect();
 
 const container = input.parentNode;
+let containerRect = container.getBoundingClientRect();
 
 input.remove();
 tooltip.remove();
 
 function callback(target, targetRect, ctx) {
-  const { container, tooltip, tooltipHeight } = ctx;
+  const { containerRect, tooltip, tooltipHeight, scrollLeft, scrollTop } = ctx;
   const { left, top } = targetRect;
-  const { scrollLeft, scrollTop } = document.documentElement;
   const offsetCorner = 25;
   const {
     top: containerTop,
     right: containerRight,
     bottom: containerBottom,
     left: containerLeft,
-  } = container.getBoundingClientRect();
+  } = containerRect;
 
   const x = left - offsetCorner + scrollLeft;
   const y = top - tooltipHeight + scrollTop;
@@ -46,12 +46,24 @@ for (let i = 0; i < 100; i++) {
   document.body.appendChild(clonedTooltip);
 
   const ctx = {
-    container,
+    scrollTop: 0,
+    scrollLeft: 0,
+    containerRect,
     tooltip: clonedTooltip,
     tooltipHeight,
   };
 
   const positionObserver = new PositionObserver(callback, ctx);
+
+  new ResizeObserver(() => {
+    ctx.containerRect = container.getBoundingClientRect();
+  }).observe(container);
+
+  document.addEventListener('scroll', () => {
+    const { scrollLeft, scrollTop } = document.documentElement;
+    ctx.scrollLeft = scrollLeft;
+    ctx.scrollTop = scrollTop;
+  });
 
   positionObserver.observe(clonedInput);
 }
