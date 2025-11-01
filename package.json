@@ -89,6 +89,6 @@
     ]
   },
   "dependencies": {
-    "request-animation-frame-loop": "^1.1.0"
+    "request-animation-frame-loop": "^1.2.0"
   }
 }
