@@ -8,4 +8,4 @@
 
 echo 'running pre-commit hook ...'
 echo ' - linting staged files ...'
-pnpm exec lint-staged -v
+npx lint-staged -v
