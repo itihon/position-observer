@@ -27,17 +27,17 @@
   "types": "./types/index.d.ts",
   "scripts": {
     "commit": "cz",
-    "prepublishOnly": "pnpm run build && pnpm run build:debug",
+    "prepublishOnly": "npm run build",
     "format:check": "prettier --check \"{lib,__tests__,demo}/**/*.{js,mjs,ts}\"",
     "format:write": "prettier --write \"{lib,__tests__,demo}/**/*.{js,mjs,ts}\"",
     "lint": "eslint --fix .",
-    "build": "pnpm run build:esm && pnpm run build:debug",
+    "build": "npm run build:esm && npm run build:debug",
     "build:esm": "rollup lib/index.js --file dist/esm/index.js --format esm",
     "build:debug": "rollup --config debug.rollup.config.js lib/debug.js --file dist/debug/esm/index.js --format esm",
     "build:types": "tsc lib/index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "build:demo": "rollup --config rollup.config.js demo/src/*.js --dir demo/bundle/ --format esm",
-    "build:demo:watch": "pnpm run build:demo --watch",
-    "test": "pnpm run test:client",
+    "build:demo:watch": "npm run build:demo --watch",
+    "test": "npm run test:client",
     "test:client": "jest --testPathPattern=\"__tests__.*client\\.test\\.js\" --env=\"jsdom\"",
     "test:watch": "jest --watch",
     "prepare": "husky"
@@ -56,7 +56,6 @@
       "import": "./dist/debug/esm/index.js"
     }
   },
-  "packageManager": "pnpm@10.6.2",
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
@@ -89,6 +88,6 @@
     ]
   },
   "dependencies": {
-    "request-animation-frame-loop": "^1.2.0"
+    "request-animation-frame-loop": "^1.2.1"
   }
 }
