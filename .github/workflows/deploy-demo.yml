@@ -17,22 +17,19 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Setup PNPM
-      uses: pnpm/action-setup@v4
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
+        cache: 'npm'
 
     - name: Setup Pages
       uses: actions/configure-pages@v5
       id: pages
 
-    - run: pnpm install
-    - run: pnpm run build
-    - run: pnpm run build:demo
+    - run: npm install
+    - run: npm run build
+    - run: npm run build:demo
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
